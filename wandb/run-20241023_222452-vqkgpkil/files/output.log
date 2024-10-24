@@ -1,0 +1,53 @@
+
+  | Name       | Type               | Params | Mode
+----------------------------------------------------------
+0 | dropout    | Dropout            | 0      | train
+1 | backbone   | Sequential         | 14.7 M | train
+2 | classifier | Linear             | 3.6 K  | train
+3 | acc        | MulticlassAccuracy | 0      | train
+----------------------------------------------------------
+14.7 M    Trainable params
+0         Non-trainable params
+14.7 M    Total params
+58.902    Total estimated model params size (MB)
+49        Modules in train mode
+0         Modules in eval mode
+Sanity Checking DataLoader 0:   0%|                                                                           | 0/2 [00:00<?, ?it/s]
+/Users/doductai/anaconda3/envs/GNN_M1/lib/python3.11/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:424: The 'val_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=9` in the `DataLoader` to improve performance.
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/Users/doductai/Desktop/AI and ML/MLOps/EmotionRecognition/train.py", line 49, in main
+    trainer.fit(model,data)
+  File "/Users/doductai/anaconda3/envs/GNN_M1/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 538, in fit
+    call._call_and_handle_interrupt(
+  File "/Users/doductai/anaconda3/envs/GNN_M1/lib/python3.11/site-packages/pytorch_lightning/trainer/call.py", line 47, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/doductai/anaconda3/envs/GNN_M1/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 574, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/Users/doductai/anaconda3/envs/GNN_M1/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 981, in _run
+    results = self._run_stage()
+              ^^^^^^^^^^^^^^^^^
+  File "/Users/doductai/anaconda3/envs/GNN_M1/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 1023, in _run_stage
+    self._run_sanity_check()
+  File "/Users/doductai/anaconda3/envs/GNN_M1/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 1052, in _run_sanity_check
+    val_loop.run()
+  File "/Users/doductai/anaconda3/envs/GNN_M1/lib/python3.11/site-packages/pytorch_lightning/loops/utilities.py", line 178, in _decorator
+    return loop_run(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/doductai/anaconda3/envs/GNN_M1/lib/python3.11/site-packages/pytorch_lightning/loops/evaluation_loop.py", line 135, in run
+    self._evaluation_step(batch, batch_idx, dataloader_idx, dataloader_iter)
+  File "/Users/doductai/anaconda3/envs/GNN_M1/lib/python3.11/site-packages/pytorch_lightning/loops/evaluation_loop.py", line 396, in _evaluation_step
+    output = call._call_strategy_hook(trainer, hook_name, *step_args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/doductai/anaconda3/envs/GNN_M1/lib/python3.11/site-packages/pytorch_lightning/trainer/call.py", line 319, in _call_strategy_hook
+    output = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/Users/doductai/anaconda3/envs/GNN_M1/lib/python3.11/site-packages/pytorch_lightning/strategies/strategy.py", line 411, in validation_step
+    return self.lightning_module.validation_step(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/doductai/Desktop/AI and ML/MLOps/EmotionRecognition/model.py", line 108, in validation_step
+    preds+=self.forward(x[i])
+RuntimeError: Expected all tensors to be on the same device, but found at least two devices, mps:0 and cpu!
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.

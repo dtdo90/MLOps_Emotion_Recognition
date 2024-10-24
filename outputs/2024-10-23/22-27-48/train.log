@@ -1,0 +1,37 @@
+[2024-10-23 22:27:48,420][__main__][INFO] - model:
+  name: vgg16
+  layers:
+  - 64
+  - 64
+  - M
+  - 128
+  - 128
+  - M
+  - 256
+  - 256
+  - 256
+  - M
+  - 512
+  - 512
+  - 512
+  - M
+  - 512
+  - 512
+  - 512
+  - M
+processing:
+  in_channel: 1
+  num_classes: 7
+  dropout: 0.5
+  lr: 0.0003
+  device: mps
+  batch_size: 128
+  cut_size: 44
+training:
+  max_epochs: 10
+  log_every_n_steps: 10
+  deterministic: true
+  limit_train_batches: 0.5
+  limit_val_batches: 0.5
+
+[2024-10-23 22:27:48,420][__main__][INFO] - Using model: vgg16

@@ -1,0 +1,33 @@
+{
+  "os":  "macOS-14.5-arm64-arm-64bit",
+  "python":  "3.11.5",
+  "startedAt":  "2024-10-23T14:35:25.655704Z",
+  "program":  "/Users/doductai/Desktop/AI and ML/MLOps/EmotionRecognition/train.py",
+  "codePath":  "Desktop/AI and ML/MLOps/EmotionRecognition/train.py",
+  "email":  "doductai8590@gmail.com",
+  "root":  ".",
+  "host":  "Dos-MacBook-Pro.local",
+  "username":  "doductai",
+  "executable":  "/Users/doductai/anaconda3/envs/GNN_M1/bin/python",
+  "codePathLocal":  "train.py",
+  "cpu_count":  10,
+  "cpu_count_logical":  10,
+  "disk":  {
+    "/":  {
+      "total":  "994662584320",
+      "used":  "564577316864"
+    }
+  },
+  "memory":  {
+    "total":  "17179869184"
+  },
+  "cpu":  {
+    "count":  10,
+    "countLogical":  10
+  },
+  "gpuapple":  {
+    "gpuType":  "Apple M1 Pro",
+    "vendor":  "sppci_vendor_Apple",
+    "cores":  16
+  }
+}

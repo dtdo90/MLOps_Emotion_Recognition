@@ -1,0 +1,5 @@
+max_epochs: 10
+log_every_n_steps: 10
+deterministic: true
+limit_train_batches: 0.5
+limit_val_batches: 0.5
