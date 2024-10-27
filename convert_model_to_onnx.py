@@ -17,7 +17,23 @@ def convert_model(cfg):
     data=FERDataModule() 
     data.prepare_data()         # load from csv file
     data.setup()                # partition into train+val based on "split"
-    data._get_dataset()         # get train+val loaders
-    data._transform_dataset()   # apply transform
 
-    # get
+    # get a batch of input
+    input_batch, input_labels=next(iter(data.train_dataloader()))
+    
+    # export model
+    logger.info(f"Converting to ONNX format")
+    torch.onnx.export(
+        model,
+        input_batch,
+        f"{root_dir}/models/trained_model.onnx",
+        opset_version=15,
+        input_names=["input"],
+        output_names=["output"],
+        dynamic_axes={"input":{0: "batch_size"},
+                      "output": {0: "batch_size"}}
+    )
+    logger.info(f"Model exported sucessfully at {root_dir}/models/trained_model.onnx")
+
+if __name__=="__main__":
+    convert_model()
