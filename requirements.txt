@@ -1,0 +1,13 @@
+torch
+torchvision
+onnxruntime
+numpy
+face-recognition
+opencv-python
+pytorch_lightning
+pandas
+scikit-learn
+seaborn
+wandb
+uvicorn
+fastapi
